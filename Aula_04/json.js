@@ -1,4 +1,4 @@
-module.exports = `[
+module.exports = [
     {
         "nome": "Costelinha",
         "tipo": "cachorro",
@@ -34,5 +34,5 @@ module.exports = `[
         "idade": 2,
         "genero": "Fêmea"
     }
-  ]`
+  ]
   
