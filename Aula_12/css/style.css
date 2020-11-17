@@ -1,6 +1,10 @@
+html, body {
+    height: 100%;
+}
+
 header {
     background-color: #ffb90f;
-    height: 10%;
+    height: 32%;
     width: 100%;
     margin-top: 70px;
     position: relative;
@@ -14,10 +18,17 @@ header nav img {
 header nav ul {
     display: inline-block;
     list-style: none;
-    margin-left: 200px;
-    padding: 20px;
+    margin-left: 160px;
 }
 
 header nav ul li {
     display: inline-block;
+    padding: 15px 0px 0px 50px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
 }
