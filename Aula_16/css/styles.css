@@ -1,0 +1,25 @@
+.header {
+    background-color: aquamarine; 
+}
+
+.section-one {
+    background-color: blueviolet;
+}
+
+.section-two {
+    background-color: salmon;
+}
+
+.section-tree {
+    background-color: sandybrown;
+}
+
+.footer {
+    background-color: aquamarine;
+}
+
+.header, .section-one, .section-two, .section-tree, .footer {
+    height: 150px;
+    margin-bottom: 15px;
+}
+
