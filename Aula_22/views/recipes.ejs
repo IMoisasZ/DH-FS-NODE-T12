@@ -1,0 +1,34 @@
+<%- include('./partials/head'); %> 
+<%- include('./partials/header'); %> 
+
+<main class="container">
+  <section class="mt-3" id="recipes">
+    <h1>Receitas</h1>
+    <p>Confira abaixo as receitas recebidas</p>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Código</th>
+          <th scope="col">Nome</th>
+          <th scope="col">E-mail</th>
+          <th scope="col">Mensagem</th>
+        </tr>
+      </thead>
+      <tbody> 
+        <% receitas.forEach(receitas => {%>   
+        <tr>           
+                <th scope="row"><%= receitas.id %> </th>
+                <td><%= receitas.nome %></td>
+                <td><%= receitas.email %></td>
+                <td><%= receitas.mensagem %></td>
+          </tr>
+          <%})%>
+      </tbody>
+    </table>
+  </section>
+</main>
+
+<%- include('./partials/footer'); %> 
+</body>
+</html>
