@@ -1,0 +1,71 @@
+<%- include('./partials/head'); %> 
+<%- include('./partials/header'); %> 
+
+<main class="container">
+  <section class="mt-3" id="recipes">
+    <h1>Receitas</h1>
+    <p>Confira abaixo as receitas recebidas</p>
+
+    <% if (typeof deleted !== "undefined") { %>
+     <div class="alert alert-success">
+        <span>Receita deletada com sucesso!</span>
+     </div>
+    <% } %>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Código</th>
+          <th scope="col">Nome</th>
+          <th scope="col">E-mail</th>
+          <th scope="col">Mensagem</th>
+          <th scope="col" colspan="2">Ações</th>
+        </tr>
+      </thead>
+      <tbody> 
+        <% receitas.forEach(receitas => {%>   
+        <tr>
+          <td><%= receitas.id %> </td>          
+          <td><%= receitas.nome %> </td>
+          <td><%= receitas.email %> </td>
+          <td><%= receitas.mensagem %> </td>  
+          <td>
+            <a href="">
+              <i class="fas fa-edit"></i>
+            </a>
+          </td>
+          <td>
+            <a href="#" data-bs-toggle="modal" data-bs-target="#modal-<%= receitas.id %>">
+              <i class="fas fa-trash"></i>
+            </a>
+          </td>
+          
+            <!-- Modal -->
+            <div class="modal fade" id="modal-<%= receitas.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Exclusão de Receita</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    Deseja realmente excluir a receita de <%= receitas.nome %> ? <br><br>
+                    <%= receitas.mensagem %>  
+                  </div>
+                  <div class="modal-footer">
+                    <a href="#"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button></a>
+                    <a href="recipes/delete/<%= receitas.id %>"><button type="button" class="btn btn-danger">Confirmar</button></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</section>
+</main>
+
+<%- include('./partials/footer'); %> 
+</body>
+</html>
