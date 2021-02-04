@@ -39,8 +39,11 @@ module.exports = {
     if(!bcrypt.compareSync(password, user.password)){
       return res.render('login', { notFound: true });
     }
-    delete user.password;
-    req.session.user = user;
+
+    let { password: pass, ...userWithoutPassword} = user
+
+    req.session.user = userWithoutPassword
+    
     res.render('recipes', { user: req.session.user, recipes });
   },
   

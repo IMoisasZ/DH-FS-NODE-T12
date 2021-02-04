@@ -16,7 +16,13 @@
           <li class="nav-item">
             <a class="nav-link" href="/#formulario">Compartilhe sua Receita</a>
           </li>
+          <% if (typeof user !== 'undefined') { %>
+            <li class="nav-item">
+              <a class="nav-link" href="/recipes">Receitas</a>
+            </li>
+          <% } %>
         </ul>
+        
         <ul class="navbar-nav ml-auto">
         <% if (typeof user !== 'undefined') { %>
             <li class="nav-item">
